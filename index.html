@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖 ¿Saldrías conmigo, gatita hermosa? 💖</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    margin:0;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    width:90%;
+    max-width:550px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+h1{
+    text-align:center;
+    color:#ff4d6d;
+    margin-bottom:10px;
+}
+
+.subtitulo{
+    text-align:center;
+    color:#ff4d6d;
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.corazones{
+    text-align:center;
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:15px;
+}
+
+select,input{
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    margin-top:25px;
+    border:none;
+    border-radius:12px;
+    background:#ff4d6d;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#e63956;
+}
+
+.resultado{
+    margin-top:20px;
+    padding:15px;
+    background:#fff0f3;
+    border-radius:10px;
+    display:none;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+
+<h1>💖 ¿Saldrías conmigo, gatita hermosa? 💖</h1>
+
+<p class="subtitulo">
+🌹 Porque cada momento contigo es especial 🌹
+</p>
+
+<p class="corazones">
+💘 💕 💖 💞 💓 💗 💘
+</p>
+
+<label>¿Te gustaría salir conmigo?</label>
+<select id="salida">
+    <option>Sí 😍</option>
+    <option>Tal vez 🤔</option>
+    <option>No 😢</option>
+</select>
+
+<label>¿Qué te gustaría comer?</label>
+<select id="comida">
+    <option>🍕 Pizza</option>
+    <option>🍣 Sushi</option>
+    <option>🍔 Hamburguesa</option>
+    <option>🥩 Parrilla</option>
+    <option>🇵🇪 Comida peruana</option>
+    <option>🍰 Postres</option>
+</select>
+
+<label>¿Qué día prefieres?</label>
+<input type="date" id="dia">
+
+<label>¿A qué hora?</label>
+<input type="time" id="hora">
+
+<button onclick="enviar()">
+❤️ Enviar respuesta ❤️
+</button>
+
+<div class="resultado" id="resultado"></div>
+
+</div>
+
+<script>
+function enviar(){
+
+const salida = document.getElementById("salida").value;
+const comida = document.getElementById("comida").value;
+const dia = document.getElementById("dia").value;
+const hora = document.getElementById("hora").value;
+
+document.getElementById("resultado").innerHTML = `
+<h3>💖 Tu respuesta 💖</h3>
+<p><b>¿Saldrías conmigo?</b> ${salida}</p>
+<p><b>¿Qué te gustaría comer?</b> ${comida}</p>
+<p><b>Día:</b> ${dia}</p>
+<p><b>Hora:</b> ${hora}</p>
+<p>💕 Gracias, gatita hermosa 💕</p>
+`;
+
+document.getElementById("resultado").style.display = "block";
+}
+</script>
+
+</body>
+</html>
